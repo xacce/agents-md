@@ -1,0 +1,23 @@
+## Epics, quests
+- epic: issue + branch `epic/<N>-<name>` from main; creating agent splits it into quests.
+- quest: issue (label `quest`, sub-issue of epic) = task sequence = branch `quest/<N>-<name>` from epic branch.
+- merge: quest -> epic (quest agent, at handoff) -> main (consumer).
+- handoff: quest tasks closed, code pushed, quest merged into epic, quest branch deleted, issue closed.
+- side findings (improvements, unrelated bugs, tails): one issue each, filed at handoff.
+
+## Tests
+- one size tag per test: `fast` <1 s, `slow` ≤10 s, `very-slow` >10 s; sizes run separately.
+- quest: run `fast` only; new `slow` test: run once alone; slow suite: no.
+- epic -> main: run slow suite first.
+- `very-slow`: write/run on user request only.
+
+## Size limits
+- file ≤600 lines.
+- build unit (crate/package/assembly/library) ≤10,000 lines.
+- split by responsibility: one purpose per part, name = content. Banned: `part1`/`part2`, `utils`/`misc` dumps, cuts through one piece of logic.
+
+## AGENTS.md maintenance
+- any AGENTS.md ≤200 lines.
+- style: terse rules only, as in this file. No prose.
+- over limit: move area-specific rules to a local `AGENTS.md` in that area's directory.
+- link from parent to local: agent decides; keep it if the local rule is fundamental, drop it if narrow.
