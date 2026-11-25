@@ -15,6 +15,9 @@
 - file ≤600 lines.
 - build unit (crate/package/assembly/library) ≤10,000 lines.
 - split by responsibility: one purpose per part, name = content. Banned: `part1`/`part2`, `utils`/`misc` dumps, cuts through one piece of logic.
+- split = architecture task, not a cut to fit the limit: first define parts — what each owns, its interface, dependency direction; then move code.
+- trace of one part inside another (wrapper, re-export, alias, copy, leftover field/import, "moved to" comment) = wrong boundary: redesign the boundary, don't patch it.
+- deliberate exceptions: facade/public-API re-exports.
 
 ## AGENTS.md maintenance
 - any AGENTS.md ≤200 lines.
