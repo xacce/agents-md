@@ -10,6 +10,8 @@
 - quest: run `fast` only; new `slow` test: run once alone; slow suite: no.
 - epic -> main: run slow suite first.
 - `very-slow`: write/run on user request only.
+- GOLDEN: never fit results to tests: red test = report as is; no tuning, rule or patch to turn it green.
+- GOLDEN: runtime code never bends to tests: no conditions, flags or paths for test situations.
 
 ## Size limits
 - file ≤600 lines.
