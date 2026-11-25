@@ -19,6 +19,14 @@
 - trace of one part inside another (wrapper, re-export, alias, copy, leftover field/import, "moved to" comment) = wrong boundary: redesign the boundary, don't patch it.
 - deliberate exceptions: facade/public-API re-exports.
 
+## Comments
+- no file header comments.
+- English only; no Cyrillic.
+- no comment restating code; comment only what code can't say: why, invariant, non-obvious constraint.
+- ≤2 lines per comment.
+- terse, as in this file; no prose.
+- comment lines ≤5% of file lines.
+
 ## AGENTS.md maintenance
 - any AGENTS.md ≤200 lines.
 - style: terse rules only, as in this file. No prose.
